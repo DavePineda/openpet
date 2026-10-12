@@ -39,3 +39,5 @@ No hay tests configurados ni scripts de test.
 - /spec Usaremos este skill para crear las especificaciones
 - /spec-impl usaremos este skill para hacer las implementaciones
 
+## Codigo limpio
+- aplicar codigo limpio
