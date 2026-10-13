@@ -1,6 +1,6 @@
 # SPEC 01 — Home feed de guardería de mascotas
 
-> **Estado:** Aprobado
+> **Estado:** implementado
 > **Depende de:** nada (primera spec del proyecto)
 > **Fecha:** 2026-10-12
 > **Objetivo:** Convertir la plantilla `references/pantallas/feed.dc.html` en la página home `/` de la app Next.js, con estilo visual idéntico y terminología de mascotas y familias.
@@ -62,17 +62,17 @@ export interface Post {
 
 ## Criterios de aceptación
 
-- [ ] `npm run dev` sirve `/` sin errores en consola.
-- [ ] El home `/` es visualmente idéntico al mockup: mismos colores (`#F6ECDF`, `#FFFDF9`, `#F2937A`, etc.), mismos radios, sombras y tipografías Fredoka/Nunito.
-- [ ] El logo del sidebar dice "OpenPet" con subtítulo "Guardería · Sala Soles".
-- [ ] Ningún texto menciona "niños", "niño", "maestra", "OpenDayCare" ni nombres de niños (Mateo); dice "mascotas", "cuidadora" y usa nombres de mascotas (Rocco, Lola).
-- [ ] Ningún texto habla de contexto humano ("orinal"); los textos de los posts son de contexto mascotas.
-- [ ] El encabezado dice "12 mascotas · martes 17 jun" y "GUARDERÍA · SALA SOLES".
-- [ ] La nav lateral muestra "Feed" (activo), "Mascotas", "Avisos", "Mi cuenta" y "Nueva publicación"; Feed apunta a `/`.
-- [ ] Aparecen exactamente 3 posts con badges LOGRO, ACTIVIDAD y ANUNCIO en sus colores del mockup.
-- [ ] El segundo post muestra el placeholder de foto con borde punteado "Foto · pintando con témperas".
-- [ ] Los enlaces apuntan a las rutas listadas en el alcance (verificable en el HTML renderizado).
-- [ ] `npx tsc --noEmit` y `npm run lint` pasan sin errores.
+- [x] `npm run dev` sirve `/` sin errores en consola.
+- [x] El home `/` es visualmente idéntico al mockup: mismos colores (`#F6ECDF`, `#FFFDF9`, `#F2937A`, etc.), mismos radios, sombras y tipografías Fredoka/Nunito.
+- [x] El logo del sidebar dice "OpenPet" con subtítulo "Guardería · Sala Soles".
+- [x] Ningún texto menciona "niños", "niño", "maestra", "OpenDayCare" ni nombres de niños (Mateo); dice "mascotas", "cuidadora" y usa nombres de mascotas (Rocco, Lola).
+- [x] Ningún texto habla de contexto humano ("orinal"); los textos de los posts son de contexto mascotas.
+- [x] El encabezado dice "12 mascotas · martes 17 jun" y "GUARDERÍA · SALA SOLES".
+- [x] La nav lateral muestra "Feed" (activo), "Mascotas", "Avisos", "Mi cuenta" y "Nueva publicación"; Feed apunta a `/`.
+- [x] Aparecen exactamente 3 posts con badges LOGRO, ACTIVIDAD y ANUNCIO en sus colores del mockup.
+- [x] El segundo post muestra el placeholder de foto con borde punteado "Foto · pintando con témperas".
+- [x] Los enlaces apuntan a las rutas listadas en el alcance (verificable en el HTML renderizado).
+- [x] `npx tsc --noEmit` y `npm run lint` pasan sin errores.
 
 ## Decisiones
 
