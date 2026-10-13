@@ -10,7 +10,11 @@ This block is written and re-added by `next dev` — verify at `node_modules/nex
 
 ## Proyecto
 
-OpenPet: app Next.js (App Router) recién creada con `create-next-app`. Página única de partida en `app/page.tsx`; las pantallas planificadas vienen de los mockups de `references/pantallas/*.dc.html` (login, feed, crear-publicacion, ninos, familia-cuenta, etc. — son el diseño de referencia, no código de la app).
+OpenPet: app Next.js (App Router) de guardería de mascotas. El home `/` ya implementa el feed de la spec 01 (`specs/01-home-feed-mascotas.md`): sidebar, composer y lista de posts renderizados desde datos mock tipados en `data/feed.ts` (tipo `Post`). La perspectiva del home es la de la cuidadora ("Caro Giménez · Cuidadora · Soles").
+
+- Las pantallas planificadas vienen de los mockups de `references/pantallas/*.dc.html` (login, feed, crear-publicacion, ninos, familia-cuenta, etc. — son el diseño de referencia, no código de la app; su terminología de niños se mapea a mascotas/cuidadora/familias).
+- Rutas enlazadas pero aún inexistentes (dan 404 por diseño hasta que haya spec): `/crear-publicacion`, `/mascotas`, `/avisos`, `/mi-cuenta`, `/login`, `/detalle-publicacion`, `/foto`.
+- Estilo: Tailwind v4 con valores exactos de los mockups (colores hex, sombras y tamaños arbitrarios), fuentes Fredoka/Nunito vía `next/font`, Server Components estáticos cuando no hay interactividad.
 
 ## Stack y configuración
 
@@ -38,6 +42,7 @@ No hay tests configurados ni scripts de test.
 ## Spec Driven Development 
 - /spec Usaremos este skill para crear las especificaciones
 - /spec-impl usaremos este skill para hacer las implementaciones
+- Subagente `spec-verificador` (`.opencode/agents/spec-verificador.md`, a nivel de proyecto): verifica los criterios de aceptación de una spec implementada — corre lint/tsc/build, valida recomendaciones Next.js con Context7, compara pantallas con Playwright (screenshots en `.playwright-mcp/`) y corrige el código cuando un criterio falla. No commitea.
 
 ## Codigo limpio
 - aplicar codigo limpio
