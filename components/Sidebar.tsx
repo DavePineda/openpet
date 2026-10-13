@@ -71,7 +71,7 @@ export function Sidebar({ activo }: { activo: SidebarSection }) {
           <div className="font-fredoka text-[17px] leading-none font-semibold text-foreground">
             OpenPet
           </div>
-          <div className="mt-0.5 text-[11.5px] text-[#A89A8B]">
+          <div className="mt-0.5 text-[11.5px] leading-[normal] text-[#A89A8B]">
             Guardería · Sala Soles
           </div>
         </div>
@@ -79,7 +79,7 @@ export function Sidebar({ activo }: { activo: SidebarSection }) {
 
       <Link
         href="/crear-publicacion"
-        className="mb-[18px] flex w-full items-center justify-center gap-2 rounded-[14px] bg-[linear-gradient(180deg,#F4977E,#EE8164)] p-3 text-[14.5px] font-extrabold text-white shadow-[0_8px_18px_-8px_rgba(238,129,100,0.75)]"
+        className="mb-[18px] flex w-full items-center justify-center gap-2 rounded-[14px] bg-[linear-gradient(180deg,#F4977E,#EE8164)] p-3 text-[14.5px] leading-[normal] font-extrabold text-white shadow-[0_8px_18px_-8px_rgba(238,129,100,0.75)]"
       >
         <Icon size={17} strokeWidth={2.4} stroke="#fff">
           <path d="M12 5v14M5 12h14" />
@@ -95,7 +95,7 @@ export function Sidebar({ activo }: { activo: SidebarSection }) {
               key={item.href}
               href={item.href}
               aria-current={esActivo ? "page" : undefined}
-              className={`flex items-center gap-3 rounded-xl px-3 py-[11px] text-[14.5px] ${
+              className={`flex items-center gap-3 rounded-xl px-3 py-[11px] text-[14.5px] leading-[normal] ${
                 esActivo
                   ? "bg-[#FBE3D8] font-extrabold text-[#D9583C]"
                   : "bg-transparent font-semibold text-[#6E6359]"
@@ -112,10 +112,10 @@ export function Sidebar({ activo }: { activo: SidebarSection }) {
         <div className="flex items-center gap-[11px] px-2 py-1.5">
           <Avatar inicial="C" bg="#F2937A" color="#fff" size="sm" />
           <div className="min-w-0 flex-1">
-            <div className="text-sm font-extrabold text-foreground">
+            <div className="text-sm leading-[normal] font-extrabold text-foreground">
               Caro Giménez
             </div>
-            <div className="text-xs text-[#A89A8B]">Cuidadora · Soles</div>
+            <div className="text-xs leading-[normal] text-[#A89A8B]">Cuidadora · Soles</div>
           </div>
           <Link
             href="/login"

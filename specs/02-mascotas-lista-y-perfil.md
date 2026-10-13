@@ -63,18 +63,18 @@ Convenciones: `fechaNacimiento` e `ingreso` son strings ya formateados (no se ca
 
 ## Criterios de aceptación
 
-- [ ] `/mascotas` renderiza sin errores en consola y es visualmente idéntica a `ninos.dc.html` (colores, radios, sombras, Fredoka/Nunito).
-- [ ] `/mascotas` muestra exactamente 8 tarjetas con los badges POLLO, LACTOSA y VINCULAR en sus colores del mockup.
-- [ ] Al pasar el mouse por una tarjeta, el borde pasa a `#F2A78E` y sube 2px con transición.
-- [ ] El buscador muestra el placeholder "Buscar mascota…" y es solo visual (no filtra).
-- [ ] Cada tarjeta enlaza a `/mascotas/<slug>` de su mascota; `/mascotas/milo` muestra el perfil completo.
-- [ ] `/mascotas/slug-inexistente` devuelve 404 (`notFound()`).
-- [ ] El perfil muestra "Alergias y notas" solo para mascotas con `alergias`, y la tabla nacimiento/sala/ingreso con los valores del mock.
-- [ ] Las familias vinculadas muestran badges ACTIVA (verde) y PENDIENTE (amarillo), y "Vincular otra familia".
-- [ ] "Volver a Mascotas" enlaza a `/mascotas`; Editar → `/mascotas/agregar`; Resumen del día → `/mascotas/<slug>/resumen`; esas rutas dan 404 por diseño.
-- [ ] El sidebar se renderiza desde `components/Sidebar.tsx` en `/`, `/mascotas` y `/mascotas/[slug]`, con "Mascotas" activo en las dos últimas y "Feed" activo en el home.
-- [ ] Ningún texto menciona "niños", "niño", "maestra" ni "OpenDayCare".
-- [ ] `npx tsc --noEmit` y `npm run lint` pasan sin errores.
+- [x] `/mascotas` renderiza sin errores en consola y es visualmente idéntica a `ninos.dc.html` (colores, radios, sombras, Fredoka/Nunito).
+- [x] `/mascotas` muestra exactamente 8 tarjetas con los badges POLLO, LACTOSA y VINCULAR en sus colores del mockup.
+- [x] Al pasar el mouse por una tarjeta, el borde pasa a `#F2A78E` y sube 2px con transición.
+- [x] El buscador muestra el placeholder "Buscar mascota…" y es solo visual (no filtra).
+- [x] Cada tarjeta enlaza a `/mascotas/<slug>` de su mascota; `/mascotas/milo` muestra el perfil completo.
+- [x] `/mascotas/slug-inexistente` devuelve 404 (`notFound()`).
+- [x] El perfil muestra "Alergias y notas" solo para mascotas con `alergias`, y la tabla nacimiento/sala/ingreso con los valores del mock.
+- [x] Las familias vinculadas muestran badges ACTIVA (verde) y PENDIENTE (amarillo), y "Vincular otra familia".
+- [x] "Volver a Mascotas" enlaza a `/mascotas`; Editar → `/mascotas/agregar`; Resumen del día → `/mascotas/<slug>/resumen`; esas rutas dan 404 por diseño.
+- [x] El sidebar se renderiza desde `components/Sidebar.tsx` en `/`, `/mascotas` y `/mascotas/[slug]`, con "Mascotas" activo en las dos últimas y "Feed" activo en el home.
+- [x] Ningún texto menciona "niños", "niño", "maestra" ni "OpenDayCare".
+- [x] `npx tsc --noEmit` y `npm run lint` pasan sin errores.
 
 ## Decisiones
 

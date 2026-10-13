@@ -14,6 +14,11 @@ export function generateStaticParams() {
   return mascotas.map((m) => ({ slug: m.id }));
 }
 
+// El perfil completo depende del slug (params): no hay shell parcial que ofrecer,
+// así que esta ruta se bloquea en servidor y opta por fuera de la validación
+// de navegación instantánea (los 8 perfiles siguen prerenderizados estáticos).
+export const instant = false;
+
 const AVATAR_FAMILIA = [
   { bg: "#C9B6E8", color: "#fff" },
   { bg: "#A9C7E8", color: "#fff" },
@@ -39,8 +44,8 @@ const ESTADO_BADGE = {
 function FilaDato({ etiqueta, valor }: { etiqueta: string; valor: string }) {
   return (
     <div className="flex justify-between px-[18px] py-[15px]">
-      <span className="text-[14.5px] text-[#94887B]">{etiqueta}</span>
-      <span className="text-[14.5px] font-extrabold text-foreground">
+      <span className="text-[14.5px] leading-[normal] text-[#94887B]">{etiqueta}</span>
+      <span className="text-[14.5px] leading-[normal] font-extrabold text-foreground">
         {valor}
       </span>
     </div>
@@ -59,15 +64,15 @@ function TarjetaFamilia({ familiar, i }: { familiar: Familiar; i: number }) {
         size={"md" satisfies AvatarSize}
       />
       <div className="min-w-0 flex-1">
-        <div className="text-[14.5px] font-extrabold text-foreground">
+        <div className="text-[14.5px] leading-[normal] font-extrabold text-foreground">
           {familiar.nombre}
         </div>
-        <div className="text-[12.5px] text-[#A89A8B]">
+        <div className="text-[12.5px] leading-[normal] text-[#A89A8B]">
           {descripcionFamiliar(familiar)}
         </div>
       </div>
       <span
-        className="flex-none rounded-full px-[9px] py-1 text-[10.5px] font-extrabold"
+        className="flex-none rounded-full px-[9px] py-1 text-[10.5px] leading-[normal] font-extrabold"
         style={{ backgroundColor: badge.bg, color: badge.color }}
       >
         {badge.texto}
@@ -88,16 +93,16 @@ function PerfilMascota({ mascota }: { mascota: Mascota }) {
             size="xl"
           />
           <div className="flex-1">
-            <h1 className="font-fredoka m-0 text-[28px] font-semibold text-foreground">
+            <h1 className="font-fredoka m-0 text-[28px] leading-[normal] font-semibold text-foreground">
               {mascota.nombre}
             </h1>
-            <p className="m-0 mt-[3px] text-[15px] text-[#94887B]">
+            <p className="m-0 mt-[3px] text-[15px] leading-[normal] text-[#94887B]">
               {mascota.edad} · Sala {mascota.sala}
             </p>
           </div>
           <Link
             href="/mascotas/agregar"
-            className="rounded-xl border-[1.5px] border-[#ECE0D0] bg-[#FFFDF9] px-4 py-[9px] text-sm font-bold text-[#6E6359]"
+            className="rounded-xl border-[1.5px] border-[#ECE0D0] bg-[#FFFDF9] px-4 py-[9px] text-sm leading-[normal] font-bold text-[#6E6359]"
           >
             Editar
           </Link>
@@ -112,7 +117,7 @@ function PerfilMascota({ mascota }: { mascota: Mascota }) {
               </Icon>
             </div>
             <div>
-              <div className="mb-[2px] text-[15px] font-extrabold text-[#C5413A]">
+              <div className="mb-[2px] text-[15px] leading-[normal] font-extrabold text-[#C5413A]">
                 Alergias y notas
               </div>
               <div className="text-[14.5px] leading-[1.5] text-[#B25249]">
@@ -135,7 +140,7 @@ function PerfilMascota({ mascota }: { mascota: Mascota }) {
       <div className="flex w-[300px] flex-none flex-col gap-[14px]">
         <Link
           href={`/mascotas/${mascota.id}/resumen`}
-          className="flex w-full items-center justify-center gap-[9px] rounded-[14px] bg-[#3F362E] p-[13px] text-[15px] font-extrabold text-white"
+          className="flex w-full items-center justify-center gap-[9px] rounded-[14px] bg-[#3F362E] p-[13px] text-[15px] leading-[normal] font-extrabold text-white"
         >
           <Icon size={18} stroke="#fff">
             <circle cx="12" cy="12" r="4" />
@@ -145,7 +150,7 @@ function PerfilMascota({ mascota }: { mascota: Mascota }) {
         </Link>
 
         <div className="rounded-2xl border border-[#ECE0D0] bg-[#FFFDF9] px-[18px] py-4">
-          <div className="mb-[14px] text-[12.5px] font-extrabold tracking-[0.8px] text-[#8A7C6D]">
+          <div className="mb-[14px] text-[12.5px] leading-[normal] font-extrabold tracking-[0.8px] text-[#8A7C6D]">
             FAMILIAS VINCULADAS
           </div>
           <div className="flex flex-col gap-[14px]">
@@ -161,7 +166,7 @@ function PerfilMascota({ mascota }: { mascota: Mascota }) {
                   <path d="M12 5v14M5 12h14" />
                 </Icon>
               </span>
-              <span className="text-[14.5px] font-extrabold text-[#C5503A]">
+              <span className="text-[14.5px] leading-[normal] font-extrabold text-[#C5503A]">
                 Vincular otra familia
               </span>
             </Link>
@@ -190,7 +195,7 @@ export default async function PerfilMascotaPage({
         <div className="mx-auto w-full max-w-[820px] px-10 pt-[34px] pb-20">
           <Link
             href="/mascotas"
-            className="mb-5 flex items-center gap-[7px] text-sm font-bold text-[#94887B]"
+            className="mb-5 flex items-center gap-[7px] text-sm leading-[normal] font-bold text-[#94887B]"
           >
             <Icon size={18} strokeWidth={2.2}>
               <path d="m15 18-6-6 6-6" />
