@@ -5,6 +5,7 @@ interface IconProps {
   strokeWidth?: number;
   stroke?: string;
   fill?: string;
+  className?: string;
   children: ReactNode;
 }
 
@@ -13,6 +14,7 @@ export function Icon({
   strokeWidth = 2,
   stroke = "currentColor",
   fill = "none",
+  className,
   children,
 }: IconProps) {
   return (
@@ -26,6 +28,7 @@ export function Icon({
       strokeLinecap="round"
       strokeLinejoin="round"
       aria-hidden="true"
+      className={className}
     >
       {children}
     </svg>
