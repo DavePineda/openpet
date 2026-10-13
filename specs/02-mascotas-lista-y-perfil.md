@@ -1,6 +1,6 @@
 # SPEC 02 — Pantallas de mascotas: lista y perfil (solo diseño)
 
-> **Estado:** Aprobado
+> **Estado:** Implementado
 > **Depende de:** SPEC 01
 > **Fecha:** 2026-10-13
 > **Objetivo:** Convertir los mockups `ninos.dc.html` y `perfil-nino.dc.html` en las rutas `/mascotas` y `/mascotas/[slug]`, con estilo idéntico, terminología de mascotas y sin lógica de negocio (solo interfaces y componentes).
