@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
+import { Avatar } from "./Avatar";
 import { Icon } from "./Icon";
 
 export type SidebarSection = "feed" | "mascotas" | "avisos" | "mi-cuenta";
@@ -109,9 +110,7 @@ export function Sidebar({ activo }: { activo: SidebarSection }) {
 
       <div className="mt-[10px] border-t border-[#ECE0D0] pt-[14px]">
         <div className="flex items-center gap-[11px] px-2 py-1.5">
-          <div className="font-fredoka flex h-[38px] w-[38px] flex-none items-center justify-center rounded-full bg-[#F2937A] text-base font-semibold text-white">
-            C
-          </div>
+          <Avatar inicial="C" bg="#F2937A" color="#fff" size="sm" />
           <div className="min-w-0 flex-1">
             <div className="text-sm font-extrabold text-foreground">
               Caro Giménez
